@@ -1,4 +1,4 @@
-package com.devmrcs.desafiocadastro.dominio;
+package com.devmrcs.desafiocadastro.domain;
 
 import java.io.*;
 
@@ -13,14 +13,12 @@ public class Formulario {
             "7 - Qual a raça do pet?"
     };
 
-    public void read() throws FileNotFoundException, IOException {
+    public void read() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(new File("formulario.txt")))) {
             String linha;
             while ((linha = br.readLine()) != null) {
                 System.out.println(linha);
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -36,6 +34,5 @@ public class Formulario {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
