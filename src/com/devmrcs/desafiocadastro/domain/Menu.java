@@ -17,22 +17,21 @@ public class Menu {
             System.out.print("Escolha uma opção: ");
     }
 
-    public boolean getUserOption() throws InputMismatchException{
+    public void getUserOption() throws InputMismatchException{
         Scanner sc = new Scanner(System.in);
 
         int userOption = sc.nextInt();
-        return this.setOption(userOption);
+        this.setOption(userOption);
     }
 
     public int getOption(){
         return option;
     }
 
-    public boolean setOption(int option) {
+    public void setOption(int option) {
         if (option <= 0 || option > 6){
             throw new InputMismatchException();
         }
         this.option = option;
-        return true;
     }
 }

@@ -2,8 +2,8 @@ package com.devmrcs.desafiocadastro.domain;
 
 import java.io.*;
 
-public class Formulario {
-    private String[] perguntas = {
+public class Form {
+    private String[] questions = {
             "1 - Qual o nome e sobrenome do pet?",
             "2 - Qual o tipo do pet (Cachorro/Gato)?",
             "3 - Qual o sexo do animal?",
@@ -15,9 +15,9 @@ public class Formulario {
 
     public void read() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(new File("formulario.txt")))) {
-            String linha;
-            while ((linha = br.readLine()) != null) {
-                System.out.println(linha);
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -26,8 +26,8 @@ public class Formulario {
 
     public void create() throws IOException {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("formulario.txt")))) {
-            for (String pergunta: this.perguntas) {
-                bw.write(pergunta);
+            for (String question: this.questions) {
+                bw.write(question);
                 bw.newLine();
             }
             bw.flush();

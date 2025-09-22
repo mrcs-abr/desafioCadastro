@@ -1,6 +1,6 @@
 package com.devmrcs.desafiocadastro.main;
 
-import com.devmrcs.desafiocadastro.domain.Formulario;
+import com.devmrcs.desafiocadastro.domain.Form;
 import com.devmrcs.desafiocadastro.domain.Menu;
 
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 
 public class main {
     public static void main(String[] args) {
-        Formulario form = new Formulario();
+        Form form = new Form();
         Menu menu = new Menu();
 
         try {
