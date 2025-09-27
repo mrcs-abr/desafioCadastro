@@ -13,11 +13,16 @@ public class Form {
             "7 - Qual a raça do pet?"
     };
 
-    public void read() throws IOException {
+    public void readLine(int questionNumber) {
         try (BufferedReader br = new BufferedReader(new FileReader(new File("formulario.txt")))) {
             String line;
+            int currentQuestion = 0;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
+                if (currentQuestion == questionNumber){
+                    System.out.println(line);
+                    break;
+                }
+                currentQuestion++;
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

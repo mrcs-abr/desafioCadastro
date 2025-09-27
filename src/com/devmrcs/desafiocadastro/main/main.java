@@ -2,6 +2,8 @@ package com.devmrcs.desafiocadastro.main;
 
 import com.devmrcs.desafiocadastro.domain.Form;
 import com.devmrcs.desafiocadastro.domain.Menu;
+import com.devmrcs.desafiocadastro.domain.Pet;
+import com.devmrcs.desafiocadastro.service.Register;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -13,7 +15,6 @@ public class main {
 
         try {
             form.create();
-            form.read();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -29,7 +30,7 @@ public class main {
             boolean closeSession = false;
             switch (menu.getOption()) {
                 case 1:
-                    System.out.println("Em construcao");
+                    Register.registerPet(new Pet(), form);
                     break;
                 case 2:
                     System.out.println("Em construcao");
